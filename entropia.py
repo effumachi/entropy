@@ -23,10 +23,6 @@ class entropia():
 		"""Executa um calculo"""
 		calculo = 1
 
-	def entropy1(self, labels, base=None):
-		""" Define entropy function 1"""
-		value,counts = np.unique(labels, return_counts=True)
-		return entropy(counts, base=base)
 
 
 if __name__ == '__main__':
@@ -35,7 +31,10 @@ if __name__ == '__main__':
 
 #w.zero()
 
-
+def entropy1(labels, base=None):
+	""" Define entropy function 1"""
+	value,counts = np.unique(labels, return_counts=True)
+	return entropy(counts, base=base)
 
 
 #labels = [1,3,5,2,3,5,3,2,1,3,4,5]
@@ -71,4 +70,4 @@ while len(j) < 3:
 		continue
 
 print(j)
-print(entropia.entropy1(j))
+print(entropy1(j))
